@@ -1,0 +1,17 @@
+.firstComponent {
+    text-align: center;
+    background-color: blueviolet;
+}
+
+.firstHeader {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+}
+
+.firstList {
+    display: inline-block;
+    list-style: none;
+    color: cyan;
+    font-size: 25px;
+}
