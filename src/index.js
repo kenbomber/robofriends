@@ -4,13 +4,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 // React allows us add css file in each component
 // import App from './App';
-import Hello from './Hello.js';
+// import Card from './Card';
+// import Cardlist from './Cardlist';
 import reportWebVitals from './reportWebVitals';
-import 'tachyons'
+import 'tachyons';
+// import Hello from './Hello'
+// import { robots } from './robots';
+// if the export of the file is not default(one output), then we have to use deconstractive
+import App from './App';
 
 ReactDOM.render(
-  <Hello greeting={"Hello " + "React Ninja"} dog={"Dog"}/>,
-  document.getElementById('root')
+  <React.StrictMode>
+    <div className="tc">
+      <App />
+    </div>
+  </React.StrictMode>
+  ,document.getElementById('root')
 );
 // greeting here is a property of the Hello component
 // If you want to start measuring performance in your app, pass a function
