@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import Cardlist from './Cardlist';
+import Scroll from '../components/Scroll'
+import Cardlist from '../components/Cardlist';
 // import { robots } from './robots';
-import SearchBox from './SearchBox';
+import SearchBox from '../components/SearchBox';
 import './App.css'
 
 // state is the description of a app, is able to change
@@ -55,14 +56,17 @@ class App extends Component {
             return <h1>Loading</h1>
         } else {
             return(
-            <React.StrictMode>
-                <header>
-                    <h1>Robofriends</h1>
-                    <SearchBox searchChange={this.onSearchChange}/>
-                </header>
-                <Cardlist robots={filteredRobot}/>
-            </React.StrictMode>
+                <React.StrictMode>
+                    <header>
+                        <h1>Robofriends</h1>
+                        <SearchBox searchChange={this.onSearchChange}/>
+                    </header>
+                    <Scroll>
+                        <Cardlist robots={filteredRobot}/>
+                    </Scroll>
+                </React.StrictMode>
             );
+            // try to create a component "scroll" wraps the Cardlist component. The concept "children" will be introducted here
         }
     };
 }

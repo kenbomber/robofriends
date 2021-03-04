@@ -11,7 +11,7 @@ import 'tachyons';
 // import Hello from './Hello'
 // import { robots } from './robots';
 // if the export of the file is not default(one output), then we have to use deconstractive
-import App from './App';
+import App from './Container/App';
 
 ReactDOM.render(
   <React.StrictMode>
