@@ -4,6 +4,7 @@ import Cardlist from '../components/Cardlist';
 // import { robots } from './robots';
 import SearchBox from '../components/SearchBox';
 import './App.css'
+import ErrorBundary from '../components/ErrorBundary';
 
 // state is the description of a app, is able to change
 // props are simply things come from STATE
@@ -61,7 +62,9 @@ class App extends Component {
                     <SearchBox searchChange={this.onSearchChange}/>
                 </header>
                 <Scroll>
-                    <Cardlist robots={filteredRobot}/>
+                    <ErrorBundary>
+                        <Cardlist robots={filteredRobot}/>
+                    </ErrorBundary>
                 </Scroll>
             </React.StrictMode>
         );
