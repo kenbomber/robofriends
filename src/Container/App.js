@@ -45,29 +45,27 @@ class App extends Component {
     };
 
     render() {
-
-        const filteredRobot = this.state.robots.filter(robot => {
-            return robot.name.toLowerCase().includes(this.state.searchField.toLowerCase());
+        const {robots, searchField} = this.state;
+        const filteredRobot = robots.filter(robot => {
+            return robot.name.toLowerCase().includes(searchField.toLowerCase());
         });
 
         console.log("3");
 
-        if (this.state.robots.length === 0){
-            return <h1>Loading</h1>
-        } else {
-            return(
-                <React.StrictMode>
-                    <header>
-                        <h1>Robofriends</h1>
-                        <SearchBox searchChange={this.onSearchChange}/>
-                    </header>
-                    <Scroll>
-                        <Cardlist robots={filteredRobot}/>
-                    </Scroll>
-                </React.StrictMode>
-            );
-            // try to create a component "scroll" wraps the Cardlist component. The concept "children" will be introducted here
-        }
+        return (!robots.length)?
+        <h1>Loading</h1>:
+        (
+            <React.StrictMode>
+                <header>
+                    <h1>Robofriends</h1>
+                    <SearchBox searchChange={this.onSearchChange}/>
+                </header>
+                <Scroll>
+                    <Cardlist robots={filteredRobot}/>
+                </Scroll>
+            </React.StrictMode>
+        );
+            // try to create a component "scroll" wraps the Cardlist component. The concept "children" will be introducted here     
     };
 }
 
